@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  get 'hotels/homepage'
+
+  get 'hotels/index'
+
+  get 'hotels/show'
+
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'hotels#homepage'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -55,7 +61,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  #->Prelang (user_login:devise/stylized_paths)
   devise_scope :user do
     get    "login"   => "users/sessions#new",         as: :new_user_session
     post   "login"   => "users/sessions#create",      as: :user_session

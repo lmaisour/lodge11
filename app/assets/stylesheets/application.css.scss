@@ -19,7 +19,6 @@
 
 @import "bootstrap";
 
-//->Prelang (ui_framework:twitter_bootstrap)
 
 // Give everything in 'yield' margin to separate it.
 .yield {
@@ -31,7 +30,97 @@
   max-width: 750px;
 }
 
-//->Prelang (user_login:devise)
 .form-user {
   max-width: 450px;
+}
+
+.search {
+    margin-top: 30%;
+}
+.search .form-section{
+    background:rgba(0,0,0,0.6);
+    border: 2px solid #414141;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#checkout {
+	width: 100px;
+}
+
+.gray {
+	height:100px;
+	width: 100px;
+	background-color: gray;
+}
+
+// body { 
+// 	padding-top: 0%; 
+// 	background-color: white;
+// 	margin:0;
+//     font-family:sans-serif;
+// 	color:#ffffff;
+//     text-align:center;
+// }
+/* background setup */
+.background {
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+    /* ie8- graceful degradation */
+    background-position:50% 50%\9 !important;
+}
+
+/* fullscreen setup */
+html, body {
+    /* give this to all tags from html to .fullscreen */
+    height:100%;
+}
+.fullscreen,
+.content-a {
+    width:100%;
+    min-height:90%;
+    font-size: 60px;
+    color: black;
+}
+.not-fullscreen,
+.not-fullscreen .content-a,
+.fullscreen.not-overflow,
+.fullscreen.not-overflow .content-a {
+    height:100%;
+    overflow:hidden;
+}
+
+/* content centering styles */
+.content-a {
+	display:table;
+}
+.content-b {
+	display:table-cell;
+    position:relative;
+	vertical-align:middle;
+	text-align:center;
+}
+
+
+section {
+	background:#fff;
+}
+.not-fullscreen {
+    height:50%;
+}
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   margin-bottom: 0px
+}
+
+.navbar li { color: #000 }
+
+.btn {
+	vertical-align: top;
+}
+.row {
+	height: 45px;
 }

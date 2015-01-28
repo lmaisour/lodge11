@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :login
   
-  #->Prelang (user_login:devise/username_login_support)
   has_many :hotels, through: :reservations
 
 
