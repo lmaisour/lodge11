@@ -24,11 +24,9 @@
 												<div class="form-group">
 													<label class="sr-only" for="checkin">Check in</label>
 													<div class="input-group">
-														<%= form_for(@hotels) do |f| %>
-															<%= f.text_field :name, :id => "checkin", :class => "form-control", :value => Date.today.strftime('%m-%d-%Y') %>  
-														<% end %>
+														<%= form_for(Reservation.new) do |f| %>
+															<%= f.text_field :checkin, :id => "checkin", :class => "form-control", :value => Date.today.strftime('%m-%d-%Y') %>  
 														<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-
 													</div>
 												</div>
 											</div>
@@ -36,8 +34,7 @@
 												<div class="form-group">
 													<label class="sr-only" for="checkout">Check in</label>
 													<div class="input-group">
-														<%= form_for(@hotels) do |f| %>
-															<%= f.text_field :name, :id => "checkin", :class => "form-control", :value => Date.tomorrow.strftime('%m-%d-%Y') %>  
+															<%= f.text_field :checkout, :id => "checkin", :class => "form-control", :value => Date.tomorrow.strftime('%m-%d-%Y') %>  
 														<% end %>
 														<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 														<script>
@@ -49,7 +46,7 @@
 		
 										</div>
 										<div class="col-md-2">
-											<button type="submit" class="btn btn-md btn-primary">Search</button>
+											<button type="submit" class="btn btn-lg btn-primary">Search</button>
 										</div>
 									</form>
 								</div>

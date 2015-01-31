@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'hotels/show'
 
   resources :hotels
+  resources :reservations
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
