@@ -11,13 +11,17 @@
 * file per style scope.
 *
 *= require_tree .
+*= require bootstrap-datepicker
+
 *= require_self
+
 */
 @import "bootstrap_configuration";
 
 @import "bootstrap-sprockets";
 
 @import "bootstrap";
+
 
 
 // Give everything in 'yield' margin to separate it.

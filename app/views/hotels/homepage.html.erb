@@ -1,4 +1,4 @@
-<div class="fullscreen background" style="background-image:url('http://i.imgur.com/nj0tP1F.jpg');" data-img-width="1600" data-img-height="1064">
+<div class="fullscreen background" style="background-color:white;" data-img-width="1600" data-img-height="1064">
 	<div class="content-a">
 		<div class="content-b">
 			<div class="search">
@@ -6,9 +6,9 @@
 					<div class="row">
 						<div class="col-md-10 col-md-offset-1">
 							<div class="content-a">
-								<div class="content-b">
+							<!-- 	<div class="content-b">
 									Book With Lodge. Save The World.
-								</div>
+								</div> -->
 							</div>
 							<div class="form-section">
 								<div class="row">
@@ -19,49 +19,37 @@
 												<input type="email" class="form-control" id="location" placeholder="Choose Your Destination">
 											</div>
 										</div>
-										<div class="col-md-2">
-											<div class="form-group">
-												<label class="sr-only" for="checkin">Check in</label>
-												<div class="input-group">
-													<input type="text" data-provide='datepicker' class="form-control" id="checkout" placeholder="Check in" >
-													<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+										<div class="input-daterange" data-behaviour="datepicker" id="datepicker" data-date-format="mm/dd/yyyy">
+											<div class="col-md-3">
+												<div class="form-group">
+													<label class="sr-only" for="checkin">Check in</label>
+													<div class="input-group">
+														<%= form_for(@hotels) do |f| %>
+															<%= f.text_field :name, :id => "checkin", :class => "form-control", :value => Date.today.strftime('%m-%d-%Y') %>  
+														<% end %>
+														<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+
+													</div>
 												</div>
 											</div>
-										</div>
-										<div class="col-md-2">
-											<div class="form-group">
-												<label class="sr-only" for="checkout">Check out</label>
-												<div class="input-group">
-													<input type="text" data-provide='datepicker' class="form-control" id="checkout" placeholder="Check out" >
-													<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+											<div class="col-md-3">
+												<div class="form-group">
+													<label class="sr-only" for="checkout">Check in</label>
+													<div class="input-group">
+														<%= form_for(@hotels) do |f| %>
+															<%= f.text_field :name, :id => "checkin", :class => "form-control", :value => Date.tomorrow.strftime('%m-%d-%Y') %>  
+														<% end %>
+														<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+														<script>
+														$('#datepicker').datepicker({format: 'mm-dd-yyyy'});
+														</script>
+													</div>
 												</div>
 											</div>
+		
 										</div>
 										<div class="col-md-2">
-											<div class="form-group">
-												<label class="sr-only" for="guest">Guest</label>
-												<select id="guest" name="guest" class="form-control">
-													<option value="1">1 Guest</option>
-													<option value="2">2 Guests</option>
-													<option value="3">3 Guests</option>
-													<option value="4">4 Guests</option>
-													<option value="5">5 Guests</option>
-													<option value="6">6 Guests</option>
-													<option value="7">7 Guests</option>
-													<option value="8">8 Guests</option>
-													<option value="9">9 Guests</option>
-													<option value="10">10 Guests</option>
-													<option value="11">11 Guests</option>
-													<option value="12">12 Guests</option>
-													<option value="13">13 Guests</option>
-													<option value="14">14 Guests</option>
-													<option value="15">15 Guests</option>
-													<option value="16">16+ Guests</option>
-												</select>
-											</div>
-										</div>
-										<div class="col-md-2">
-											<button type="submit" class="btn btn-default btn-primary">Search</button>
+											<button type="submit" class="btn btn-md btn-primary">Search</button>
 										</div>
 									</form>
 								</div>
@@ -73,19 +61,3 @@
 		</div>
 	</div>
 </div>
-
-	<div class="not-fullscreen background" style="background-image:url('http://www.minimit.com/images/picjumbo.com_IMG_6643.jpg');" data-img-width="1600" data-img-height="1064">
-		<div class="content-a">
-			<div class="content-b">
-				Centered content
-			</div>
-		</div>
-	</div>
-
-	<section class="fullscreen">
-		<div class="content-a">
-			<div class="content-b">
-				Centered content
-			</div>
-		</div>
-	</section>

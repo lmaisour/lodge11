@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
-# boostrap datepicker
+
+#gem for forms
+gem 'simple_form'
+#gems for date-range-picker
 gem 'bootstrap-datepicker-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
