@@ -1,4 +1,3 @@
 class Reservation < ActiveRecord::Base
-  belongs_to :user
-  belongs_to :hotels
+  has_many :users, through: :searches
 end

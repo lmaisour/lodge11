@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
   attr_accessor :login
   
+  has_many :reservations, through: :searches
   has_many :hotels, through: :reservations
 
 

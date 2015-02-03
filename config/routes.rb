@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'searches/new'
+
+  get 'searches/update'
+
   get 'hotels/homepage'
 
   get 'hotels/index'
@@ -7,13 +11,14 @@ Rails.application.routes.draw do
 
   resources :hotels
   resources :reservations
+  resources :searches
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'hotels#homepage'
+  root 'searches#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
